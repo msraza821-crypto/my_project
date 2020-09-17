@@ -5,7 +5,7 @@ const db=require("./config/db.config")
 // const MongoClient = require("mongodb").MongoClient;
 
 db.then((message)=>{
-  console.log(message)
+//   console.log(message)
 })
 
 
