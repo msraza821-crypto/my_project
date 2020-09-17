@@ -25,6 +25,6 @@ db.then((message)=>{
 //   client.close();
 // })
 
-app.listen(3001, ()=>{
+app.listen(3100, ()=>{
     console.log("app is listing on port 30000")
 })
