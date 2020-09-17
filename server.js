@@ -3,13 +3,43 @@ const app=express()
 const bodyParser=require("body-parser")
 const db=require("./config/db.config")
 // const MongoClient = require("mongodb").MongoClient;
+let avg;
+let i=1;
+// db.then((client)=>{
+  // console.log(client)
+//   var dbo=client.db("first")
+//   console.log(dbo)
+//   for(myobj of avg)
+// {
+//   dbo.collection("company").insertOne(myobj, function(err, res) {
+//     if (err) throw err;
+//     console.log(i++," document inserted");
+//     // db.close();
+//   });
+// }
+// })
 
-db.then((message)=>{
-//   console.log(message)
+
+app.use("/",(req,res)=>{
+  db.then((client)=>{
+    if(client)
+    {
+      var dbo=client.db("first")
+
+      dbo.collection("company").find({}).toArray(function(err, result) {
+        if (err) throw err;
+        res.json(result);
+        
+      });
+
+    }
+  })
 })
 
 
-// const client = new MongoClient(uri, { useNewUrlParser: true });
+
+
+// const clients = new MongoClient(uri, { useNewUrlParser: true });
 // client.connect(err => {
 //   if(err)
 //   {
@@ -25,6 +55,9 @@ db.then((message)=>{
 //   client.close();
 // })
 
-app.listen(3100, ()=>{
+app.listen(3000, ()=>{
     console.log("app is listing on port 30000")
 })
+
+
+ 
