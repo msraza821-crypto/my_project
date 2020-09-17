@@ -55,7 +55,7 @@ app.use("/",(req,res)=>{
 //   client.close();
 // })
 
-app.listen(3000, ()=>{
+app.listen(3100, ()=>{
     console.log("app is listing on port 30000")
 })
 
