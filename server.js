@@ -1,10 +1,12 @@
 const express=require("express")
 const app=express()
 const bodyParser=require("body-parser")
-const db=require("./config/db.config")
+// const db=require("./config/db.config")
+const dataRoute=require("./routes/data.routes")
 // const MongoClient = require("mongodb").MongoClient;
 let avg;
 let i=1;
+// const db=require("./config/db.config")
 // db.then((client)=>{
   // console.log(client)
 //   var dbo=client.db("first")
@@ -20,21 +22,7 @@ let i=1;
 // })
 
 
-app.use("/",(req,res)=>{
-  db.then((client)=>{
-    if(client)
-    {
-      var dbo=client.db("first")
-
-      dbo.collection("company").find({}).toArray(function(err, result) {
-        if (err) throw err;
-        res.json(result);
-        
-      });
-
-    }
-  })
-})
+app.use("/",dataRoute)
 
 
 
