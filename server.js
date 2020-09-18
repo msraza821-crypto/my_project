@@ -21,6 +21,14 @@ let i=1;
 // }
 // })
 
+// app.use('/*', function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+//   res.header("Access-Control-Allow-Methods", "GET, POST","PUT");
+//   next();
+// }, dataRoute);
+
+
 
 app.use("/",dataRoute)
 
@@ -42,12 +50,6 @@ app.use("/",dataRoute)
 //   console.log("after error")
 //   client.close();
 // })
-app.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
-  res.header("Access-Control-Allow-Methods", "GET, POST","PUT");
-  next();
-});
 
 app.listen(3100, ()=>{
     console.log("app is listing on port 30000")
