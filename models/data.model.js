@@ -12,7 +12,7 @@ dbconn.then(client=>
     Data.findAll=function(result){
         
     
-        db.collection("company").find({}).limit(5).toArray(function(err, data) {
+        db.collection("company").find({$where:function(){return (this.topic="gas")}}).limit(5).toArray(function(err, data) {
             if (err) 
             result(err, null)
           else

@@ -2,7 +2,7 @@
 
 const MongoClient=require("mongodb").MongoClient
 // const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://shabbir:sabrin99@cluster0.gg3cx.mongodb.net/first?retryWrites=true&w=majority"
+const uri = "mongodb+srv://msraza821:sabrin99@cluster0.gg3cx.mongodb.net/first?retryWrites=true&w=majority"
 let dbconn;
 var Db = require('mongodb').Db
  
