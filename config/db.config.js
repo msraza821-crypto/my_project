@@ -11,7 +11,7 @@ function getDb(){
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then((client) => {
-  console.log("MongoDB Connected…")
+  console.log("MongoDB Connected successfully…")
 return client
 
 }).catch(error=>
